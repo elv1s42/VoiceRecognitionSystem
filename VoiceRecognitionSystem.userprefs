@@ -1,0 +1,21 @@
+﻿<Properties StartupConfiguration="{8B13A8A5-64D6-4F10-822E-B48B3A1824C9}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/CustomRenderers/VoiceButtonRenderer.cs">
+    <Files>
+      <File FileName="iOS/SpeechRecognition/SpeechToTextImplementation.cs" Line="10" Column="57" />
+      <File FileName="Droid/CustomRenderers/VoiceButtonRenderer.cs" Line="119" Column="4" />
+      <File FileName="VoiceRecognitionSystem/Home.xaml.cs" Line="24" Column="1" />
+      <File FileName="Droid/CustomRenderers/ActivityResultEventArgs.cs" Line="9" Column="25" />
+      <File FileName="VoiceRecognitionSystem/SpeechRecognition/ISpeechToText.cs" Line="7" Column="32" />
+      <File FileName="VoiceRecognitionSystem/SpeechRecognition/EventArgsVoiceRecognition.cs" Line="4" Column="15" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/hassan/Projects/VoiceRecognitionSystem/iOS/Speech Recognition/SpeechToTextImplementation.cs" line="116" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.VoiceRecognitionSystem.Droid PreferredExecutionTarget="Android.Android_Accelerated_x86" />
+  <MonoDevelop.Ide.ItemProperties.VoiceRecognitionSystem.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" />
+</Properties>
