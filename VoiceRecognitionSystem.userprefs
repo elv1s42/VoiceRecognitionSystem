@@ -1,21 +1,22 @@
 ﻿<Properties StartupConfiguration="{8B13A8A5-64D6-4F10-822E-B48B3A1824C9}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/CustomRenderers/VoiceButtonRenderer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/SpeechRecognition/SpeechToTextImplementation.cs">
     <Files>
-      <File FileName="iOS/SpeechRecognition/SpeechToTextImplementation.cs" Line="10" Column="57" />
-      <File FileName="Droid/CustomRenderers/VoiceButtonRenderer.cs" Line="119" Column="4" />
+      <File FileName="iOS/SpeechRecognition/SpeechToTextImplementation.cs" Line="20" Column="4" />
       <File FileName="VoiceRecognitionSystem/Home.xaml.cs" Line="24" Column="1" />
       <File FileName="Droid/CustomRenderers/ActivityResultEventArgs.cs" Line="9" Column="25" />
       <File FileName="VoiceRecognitionSystem/SpeechRecognition/ISpeechToText.cs" Line="7" Column="32" />
       <File FileName="VoiceRecognitionSystem/SpeechRecognition/EventArgsVoiceRecognition.cs" Line="4" Column="15" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/hassan/Projects/VoiceRecognitionSystem/iOS/Speech Recognition/SpeechToTextImplementation.cs" line="116" column="1" />
+      <Breakpoint file="/Users/macbookproretina/Desktop/VoiceRecognitionSystem-master/iOS/SpeechRecognition/SpeechToTextImplementation.cs" relfile="iOS/SpeechRecognition/SpeechToTextImplementation.cs" line="40" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.VoiceRecognitionSystem.Droid PreferredExecutionTarget="Android.Android_Accelerated_x86" />
-  <MonoDevelop.Ide.ItemProperties.VoiceRecognitionSystem.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" />
+  <MonoDevelop.Ide.ItemProperties.VoiceRecognitionSystem.Droid PreferredExecutionTarget="Android.Nexus 4 (Marshmallow)" />
+  <MonoDevelop.Ide.ItemProperties.VoiceRecognitionSystem.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.1C8835D5-BDB1-479A-9EDF-25E60D12C449" />
+  <MultiItemStartupConfigurations />
 </Properties>
