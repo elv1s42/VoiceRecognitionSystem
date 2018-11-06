@@ -2,50 +2,48 @@
 using Android.App;
 using Android.Content;
 using Android.Speech;
-using Android.Views;
 using VoiceRecognitionSystem;
-using VoiceRecognitionSystem.Droid;
+using VoiceRecognitionSystem.Droid.CustomRenderers;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
 [assembly: ExportRenderer (typeof (VoiceButton), typeof (VoiceButtonRenderer))]
-namespace VoiceRecognitionSystem.Droid
+namespace VoiceRecognitionSystem.Droid.CustomRenderers
 {
 	public class VoiceButtonRenderer : ButtonRenderer, Android.Views.View.IOnClickListener
 	{
-		private bool isRecording;
-		private readonly int VOICE = 10;
-		private MainActivity activity;
-		private global::Android.Widget.Button nativeButton;
-		private VoiceButton sharedButton;
+	    private const int Voice = 10;
+	    private MainActivity _activity;
+		private Android.Widget.Button _nativeButton;
+		private VoiceButton _sharedButton;
 
-		public VoiceButtonRenderer ()
-		{
-			isRecording = false;
-		}
-		protected override void OnElementChanged (ElementChangedEventArgs<Button> e)
+	    public VoiceButtonRenderer(Context c)
+	    {
+	    }
+
+	    protected override void OnElementChanged (ElementChangedEventArgs<Button> e)
 		{
 			base.OnElementChanged (e);
-			activity = this.Context as MainActivity;
-			nativeButton = new global::Android.Widget.Button (Context);
+			_activity = this.Context as MainActivity;
+			_nativeButton = new global::Android.Widget.Button (Context);
 
 			if (e.OldElement == null) {
 				// perform initial setup
 
-				SetNativeControl (nativeButton);
-				nativeButton.Clickable = true;
-				nativeButton.Focusable = true;
-				nativeButton.SetOnClickListener (this);
+				SetNativeControl (_nativeButton);
+				_nativeButton.Clickable = true;
+				_nativeButton.Focusable = true;
+				_nativeButton.SetOnClickListener (this);
 
 			}
 
 			if (e.OldElement != null) {
-				activity.ActivityResult -= HandleActivityResult;
+				_activity.ActivityResult -= HandleActivityResult;
 			}
 
 			if (e.NewElement != null) {
-				activity.ActivityResult += HandleActivityResult;
-				sharedButton = e.NewElement as VoiceButton;
+				_activity.ActivityResult += HandleActivityResult;
+				_sharedButton = e.NewElement as VoiceButton;
 			}
 		}
 		protected override void OnElementPropertyChanged (object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -93,7 +91,7 @@ namespace VoiceRecognitionSystem.Droid
 					// if you do use another locale, regional dialects may not be recognised very well
 
 					voiceIntent.PutExtra (RecognizerIntent.ExtraLanguage, Java.Util.Locale.Default);
-					activity.StartActivityForResult (voiceIntent, VOICE);
+					_activity.StartActivityForResult (voiceIntent, Voice);
 				}
 			} catch (Exception ex) {
 				Console.WriteLine (ex.Message);
@@ -101,7 +99,7 @@ namespace VoiceRecognitionSystem.Droid
 		}
 		private void HandleActivityResult (object sender, ActivityResultEventArgs e)
 		{
-			if (e.RequestCode == VOICE) {
+			if (e.RequestCode == Voice) {
 				if (e.ResultCode == Result.Ok) {
 					var matches = e.Data.GetStringArrayListExtra (RecognizerIntent.ExtraResults);
 					if (matches.Count != 0) {
@@ -110,10 +108,10 @@ namespace VoiceRecognitionSystem.Droid
 						// limit the output to 500 characters
 						if (textInput.Length > 500)
 							textInput = textInput.Substring (0, 500);
-						sharedButton.OnTextChanged?.Invoke (textInput);
+						_sharedButton.OnTextChanged?.Invoke (textInput);
 						//textBox.Text = textInput;
 					} else
-						sharedButton.OnTextChanged?.Invoke ("No speech was recognised");
+						_sharedButton.OnTextChanged?.Invoke ("No speech was recognised");
 				}
 			}
 
